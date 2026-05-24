@@ -1,0 +1,17 @@
+--index-url https://download.pytorch.org/whl/cu121
+--extra-index-url https://pypi.org/simple
+
+# Versiones cu121 explícitas — se descargan del índice PyTorch (CUDA 12.1, compatible con driver CUDA 12.3)
+# La etiqueta +cu121 no existe en PyPI, así pip usa el índice de PyTorch y no descarga CUDA 13
+torch==2.5.1+cu121
+torchvision==0.20.1+cu121
+torchaudio==2.5.1+cu121
+
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+jupyter
+kagglehub
+optuna

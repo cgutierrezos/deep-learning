@@ -1,0 +1,24 @@
+{
+    "name": "ML Docker Env",
+    "build": {
+        "dockerfile": "../Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/opt/venv/bin/python",
+                "jupyter.kernels.filter": []
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter"
+            ]
+        }
+    },
+    "runArgs": [
+        "--gpus=all",
+        "--ipc=host"
+    ],
+    "postCreateCommand": "python3 -m ipykernel install --user --name=deeplearning --display-name 'Python 3 (Deep Learning)' && python3 -c 'import torch; gpu=torch.cuda.is_available(); print(f\"GPU disponible: {gpu}\"); print(f\"CUDA: {torch.version.cuda}\") if gpu else print(\"Sin GPU - modo CPU activo\")'",
+    "forwardPorts": [8888]
+}
