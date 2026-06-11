@@ -15,3 +15,7 @@ seaborn
 jupyter
 kagglehub
 optuna
+plotly
+gdown
+unzip
+opencv-python
